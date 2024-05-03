@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import electro.lab.models.dto.loginDto;
-import electro.lab.services.EmployeeService;
+import electro.lab.services.UserService;
 
 @RestController
-public class EmployeeController {
+public class UserController {
 
   @Autowired
-  EmployeeService service;
+  UserService service;
 
   @PostMapping("/api/login")
   public HttpStatus auth(@RequestBody loginDto credentials) {

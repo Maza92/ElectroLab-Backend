@@ -3,22 +3,22 @@ package electro.lab.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import electro.lab.models.Employee;
+import electro.lab.models.user;
 import electro.lab.models.dto.loginDto;
-import electro.lab.repositories.EmployeeRepository;
+import electro.lab.repositories.UserRepository;
 
 @Service
-public class EmployeeService {
+public class UserService {
 
   @Autowired
-  EmployeeRepository repository;
+  UserRepository repository;
 
   public loginDto findUser(loginDto credentials) {
-    Employee employee = repository.findByUsername(credentials.getUsername());
-    if (employee == null) 
+    user user = repository.findByUsername(credentials.getUsername());
+    if (user == null) 
       return null;
 
-    if (!employee.getPassword().equals(credentials.getPassword())) 
+    if (!user.getPassword().equals(credentials.getPassword())) 
       return new loginDto(credentials.getUsername(), null);
 
     return credentials;

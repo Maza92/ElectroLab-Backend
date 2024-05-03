@@ -28,10 +28,4 @@ public class Employee {
 
   @Column(nullable = false)
   private double salary;
-
-  @Column(nullable = false, length = 50)
-  private String username;
-  
-  @Column(name = "[password]", nullable = false, length = 50)
-  private String password;
 }
