@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import electro.lab.models.Product;
@@ -19,5 +21,9 @@ public class ProductController {
   public List<Product> allProducts() {
     return service.getAllProducts();
   }
-  
+
+  @PostMapping("/managament/product/")
+  public void saveProduct(@RequestBody Product product) {
+    service.saveProduct(product);
+  }
 }

@@ -22,8 +22,11 @@ public class user {
   @Column(name = "user_id", nullable = false)
   private Long id;
   
-  @Column(name = "complete_name", nullable = false, length = 100)
+  @Column(name = "[name]", nullable = false, length = 100)
   private String name;
+
+  @Column(name = "lastname", nullable = false, length = 100)
+  private String lastname;
 
   @Column(name = "register_date", nullable = false)
   private Date registerDate;
