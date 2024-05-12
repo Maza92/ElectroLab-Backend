@@ -1,6 +1,7 @@
 package electro.lab.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,11 @@ public class ProductController {
   @GetMapping("/managament/product/")
   public List<Product> allProducts() {
     return service.getAllProducts();
+  }
+
+  @GetMapping("/managament/product/{id}")
+  public Optional<Product> getProductById(@PathVariable Long id) {
+    return service.getProductById(id);
   }
 
   @PostMapping("/managament/product/")
